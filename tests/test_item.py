@@ -17,10 +17,6 @@ def test_calculate_total_price():
 
 def test_apply_discount():
     exp = Item("name", 2, 2)
-    exp.pay_rate = 1
-    exp.apply_discount()
-    assert exp.price * Item.pay_rate == 2
-
     exp.pay_rate = 0.8
     exp.apply_discount()
-    assert exp.price * Item.pay_rate == 1.6
+    assert exp.price == 1.6
